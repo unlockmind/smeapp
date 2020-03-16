@@ -1,6 +1,7 @@
 {
     "env": {
         "browser": true,
+        "node": true,
         "es6": true
     },
     "extends": [
@@ -19,8 +20,28 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "eslint-plugin-import-helpers",
+        "import-helpers"
     ],
     "rules": {
+        "linebreak-style": 0,
+        "global-require": 0,
+        "eslint linebreak-style": [0, "error", "windows"],
+        "semi": "error",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "import-helpers/order-imports": [
+            "warn",
+            { 
+                "newlinesBetween": "always",
+                "groups": [
+                    "/^react/",
+                    "module",
+                   
+                    ["parent", "sibling", "index"]
+                ],
+                "alphabetize": { "order": "asc", "ignoreCase": true }
+            }
+        ]
     }
 }

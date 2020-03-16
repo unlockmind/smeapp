@@ -1,9 +1,15 @@
 import React from "react";
+import { Provider } from "react-redux";
+import Arr from './arr'
+import store from "../../../store";
 
 function Test() {
+  console.log("Testandp")
   return (
     <>
-      <h1>TEST</h1>
+    <Provider store={store}>
+      <Arr />
+     </Provider>
     </>
   );
 }

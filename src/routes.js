@@ -8,7 +8,6 @@ import Typography from "views/Typography.jsx";
 import UserProfile from "views/UserProfile.jsx";
 import Test from "views/pages/test/Test.jsx";
 
-<<<<<<< HEAD
 var routes = [
   {
     path: "/test",
@@ -82,79 +81,5 @@ var routes = [
     component: Rtl,
     layout: "/rtl"
   }
-=======
-var routes = [{
-        path: "/test",
-        name: "Test",
-        rltName: "test",
-        icon: "tim-icons icon-chart-pie-36",
-        component: Test,
-        layout: "admin"
-    },
-    {
-        path: "/dashboard",
-        name: "Dashboard",
-        rtlName: "لوحة القيادة",
-        icon: "tim-icons icon-chart-pie-36",
-        component: Dashboard,
-        layout: "/admin"
-    },
-    {
-        path: "/icons",
-        name: "Icons",
-        rtlName: "الرموز",
-        icon: "tim-icons icon-atom",
-        component: Icons,
-        layout: "/admin"
-    },
-    {
-        path: "/map",
-        name: "Map",
-        rtlName: "خرائط",
-        icon: "tim-icons icon-pin",
-        component: Map,
-        layout: "/admin"
-    },
-    {
-        path: "/notifications",
-        name: "Notifications",
-        rtlName: "إخطارات",
-        icon: "tim-icons icon-bell-55",
-        component: Notifications,
-        layout: "/admin"
-    },
-    {
-        path: "/user-profile",
-        name: "User Profile",
-        rtlName: "ملف تعريفي للمستخدم",
-        icon: "tim-icons icon-single-02",
-        component: UserProfile,
-        layout: "/admin"
-    },
-    {
-        path: "/tables",
-        name: "Table List",
-        rtlName: "قائمة الجدول",
-        icon: "tim-icons icon-puzzle-10",
-        component: TableList,
-        layout: "/admin"
-    },
-    {
-        path: "/typography",
-        name: "Typography",
-        rtlName: "طباعة",
-        icon: "tim-icons icon-align-center",
-        component: Typography,
-        layout: "/admin"
-    },
-    {
-        path: "/rtl-support",
-        name: "RTL Support",
-        rtlName: "ار تي ال",
-        icon: "tim-icons icon-world",
-        component: Rtl,
-        layout: "/rtl"
-    }
->>>>>>> 57a324ef13784dbc331d48b708a8a293b4c1ef72
 ];
 export default routes;

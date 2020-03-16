@@ -26,6 +26,8 @@ import RTLLayout from "layouts/RTL/RTL.jsx";
 import "assets/scss/black-dashboard-react.scss";
 import "assets/demo/demo.css";
 import "assets/css/nucleo-icons.css";
+import "assets/css/SME.css";
+// import "assets/css/semantic-ui-css/semantic.css";
 
 const hist = createBrowserHistory();
 

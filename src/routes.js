@@ -6,15 +6,15 @@ import Rtl from "views/Rtl.jsx";
 import TableList from "views/TableList.jsx";
 import Typography from "views/Typography.jsx";
 import UserProfile from "views/UserProfile.jsx";
-import Test from "views/pages/test/Test.jsx";
+import Test from "./Teste/test";
 
 var routes = [{
         path: "/test",
         name: "Test",
-        rltName: "test",
+        rltName: "القيادة",
         icon: "tim-icons icon-chart-pie-36",
         component: Test,
-        layout: "admin"
+        layout: "/admin"
     },
     {
         path: "/dashboard",

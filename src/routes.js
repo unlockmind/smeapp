@@ -15,7 +15,7 @@ var routes = [
     rltName: "test",
     icon: "tim-icons icon-chart-pie-36",
     component: Test,
-    layout: "admin"
+    layout: "/admin"
   },
   {
     path: "/dashboard",

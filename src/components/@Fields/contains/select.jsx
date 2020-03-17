@@ -1,50 +1,37 @@
-import React, { useRef } from "react";
-import { Select } from "semantic-ui-react";
+import React, { useRef, useEffect } from "react";
+import ReactSelect from "react-select";
 import { useField } from "@unform/core";
-import { useEffect } from "react";
-const countryOptions = [
-  { key: "af", value: "af", text: "Afghanistan" },
-  { key: "ax", value: "ax", text: "Aland Islands" },
-  { key: "al", value: "al", text: "Albania" },
-  { key: "dz", value: "dz", text: "Algeria" },
-  { key: "as", value: "as", text: "American Samoa" },
-  { key: "ad", value: "ad", text: "Andorra" },
-  { key: "ao", value: "ao", text: "Angola" },
-  { key: "ai", value: "ai", text: "Anguilla" },
-  { key: "ag", value: "ag", text: "Antigua" },
-  { key: "ar", value: "ar", text: "Argentina" },
-  { key: "am", value: "am", text: "Armenia" },
-  { key: "aw", value: "aw", text: "Aruba" },
-  { key: "au", value: "au", text: "Australia" },
-  { key: "at", value: "at", text: "Austria" },
-  { key: "az", value: "az", text: "Azerbaijan" },
-  { key: "bs", value: "bs", text: "Bahamas" },
-  { key: "bh", value: "bh", text: "Bahrain" },
-  { key: "bd", value: "bd", text: "Bangladesh" },
-  { key: "bb", value: "bb", text: "Barbados" },
-  { key: "by", value: "by", text: "Belarus" },
-  { key: "be", value: "be", text: "Belgium" },
-  { key: "bz", value: "bz", text: "Belize" },
-  { key: "bj", value: "bj", text: "Benin" }
-];
-export default function SelectSME({ name, options, ...rest }) {
-  const secletRef = useRef(null);
-  const { fieldName, registerField, defaultValue, error } = useField(name);
 
+const SelectSME = ({ name, ...rest }) => {
+  const selectRef = useRef(null);
+  const { fieldName, defaultValue, registerField, error } = useField(name);
   useEffect(() => {
     registerField({
       name: fieldName,
-      ref: secletRef.current,
-      path: "value"
+      ref: selectRef.current,
+      path: "state.value",
+      getValue: ref => {
+        if (rest.isMulti) {
+          if (!ref.state.value) {
+            return [];
+          }
+          return ref.state.value.map(option => option.value);
+        } else {
+          if (!ref.state.value) {
+            return "";
+          }
+          return ref.state.value.value;
+        }
+      }
     });
-  }, [fieldName, registerField]);
-
+  }, [fieldName, registerField, rest.isMulti]);
   return (
-    <Select
-      options={options}
+    <ReactSelect
       defaultValue={defaultValue}
+      ref={selectRef}
+      classNamePrefix="react-select"
       {...rest}
-      ref={secletRef}
     />
   );
-}
+};
+export default SelectSME;

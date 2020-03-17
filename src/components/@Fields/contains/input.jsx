@@ -15,5 +15,18 @@ export default function InputSME({ name, ...rest }) {
     });
   }, [fieldName, registerField]);
 
-  return <Input defaultValue={defaultValue} {...rest} ref={inputRef} />;
+  return (
+    <div class="ui form">
+      <div class="field">
+        <div class="ui pointing below label">Please enter a value</div>
+        <input
+          type="text"
+          placeholder="Search..."
+          defaultValue={defaultValue}
+          {...rest}
+          ref={inputRef}
+        />
+      </div>
+    </div>
+  );
 }

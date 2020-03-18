@@ -19,9 +19,7 @@ export default function Test() {
                 <a href="https://nucleoapp.com/?ref=1712">NucleoApp</a>
               </p>
             </CardHeader>
-            <CardBody className="all-icons">
-              <TableSME />
-            </CardBody>
+            <CardBody className="all-icons">{/* <TableSME /> */}</CardBody>
           </Card>
         </Col>
       </Row>

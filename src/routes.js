@@ -7,8 +7,8 @@ import Typography from "views/Typography.jsx";
 import UserProfile from "views/UserProfile.jsx";
 import Test from "./Teste/test";
 //Rota para o core dos Passa Portes
-import PassaPorteCore from "./views/pages/Modules/passaporte";
 import Location from "./views/pages/Location";
+import PassaPorteCore from "./views/pages/Modules/passaporte";
 
 var routes = [{
         path: "/test",
@@ -57,19 +57,19 @@ var routes = [{
         layout: "/admin"
     },
     {
-        path: "/location",
-        name: "Localização",
-        rltName: "Localização",
-        icon: "tim-icons icon-square-pin",
-        component: Location,
-        layout: "/admin"
-    },
-    {
         path: "/notifications",
         name: "Notifications",
         rtlName: "إخطارات",
         icon: "tim-icons icon-bell-55",
         component: Notifications,
+        layout: "/admin"
+    },
+    {
+        path: "/location",
+        name: "Localização",
+        rltName: "Localização",
+        icon: "tim-icons icon-square-pin",
+        component: Location,
         layout: "/admin"
     },
     {

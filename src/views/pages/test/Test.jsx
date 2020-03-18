@@ -1,15 +1,11 @@
 import React from "react";
-import { Provider } from "react-redux";
-import Arr from './arr'
-import store from "../../../store";
+
+import Test2 from "./Test2";
 
 function Test() {
-  console.log("Testandp")
   return (
     <>
-    <Provider store={store}>
-      <Arr />
-     </Provider>
+      <Test2 />
     </>
   );
 }

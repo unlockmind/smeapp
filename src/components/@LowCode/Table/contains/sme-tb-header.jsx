@@ -22,7 +22,7 @@ export default function HeaderTbSME(props) {
   const TableCell = () => {
     return htmlElement.map(cell => {
       console.log(cell);
-      return <th>hhh</th>;
+      return <th>{cell}</th>;
     });
   };
 

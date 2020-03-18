@@ -1,16 +1,16 @@
-
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-// javascript plugin used to create scrollbars on windows
-import PerfectScrollbar from "perfect-scrollbar";
+import { Provider } from "react-redux";
+
+import routes from "routes.js";
+import store from "../../store";
 
 // core components
+import PerfectScrollbar from "perfect-scrollbar";
 import AdminNavbar from "components/Navbars/AdminNavbar.jsx";
 import Footer from "components/Footer/Footer.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
-
-import routes from "routes.js";
 
 import logo from "assets/img/react-logo.png";
 
@@ -100,8 +100,8 @@ class Admin extends React.Component {
             routes={routes}
             bgColor={this.state.backgroundColor}
             logo={{
-              outterLink: "https://www.creative-tim.com/",
-              text: "Creative Tim",
+              outterLink: "https://www.unlockmind-dev.com/",
+              text: "UnlockMind",
               imgSrc: logo
             }}
             toggleSidebar={this.toggleSidebar}
@@ -117,7 +117,9 @@ class Admin extends React.Component {
               toggleSidebar={this.toggleSidebar}
               sidebarOpened={this.state.sidebarOpened}
             />
-            <Switch>{this.getRoutes(routes)}</Switch>
+            <Provider store={store}>
+              <Switch>{this.getRoutes(routes)}</Switch>
+            </Provider>
             {// we don't want the Footer to be rendered on map page
             this.props.location.pathname.indexOf("maps") !== -1 ? null : (
               <Footer fluid />

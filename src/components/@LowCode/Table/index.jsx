@@ -1,8 +1,11 @@
 import React from "react";
 import { Table, CardBody, CardHeader, CardTitle, Card } from "reactstrap";
+
+import { checkPropTypes } from "prop-types";
+
 import HeaderTbSME from "./contains/sme-tb-header";
 
-export default function TableSME() {
+export default function TableSME(props) {
   return (
     <div>
       <Card>

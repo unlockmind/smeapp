@@ -7,6 +7,8 @@ import TableList from "views/TableList.jsx";
 import Typography from "views/Typography.jsx";
 import UserProfile from "views/UserProfile.jsx";
 import Test from "./Teste/test";
+//Rota para o core dos Passa Portes
+import PassaPorteCore from "./views/pages/Modules/passaporte";
 
 var routes = [{
         path: "/test",
@@ -38,6 +40,20 @@ var routes = [{
         rtlName: "خرائط",
         icon: "tim-icons icon-pin",
         component: Map,
+        layout: "/admin"
+    },
+    {
+        path: "/listagem-passaporte",
+        name: "Passa Porte",
+        icon: "tim-icons icon-bell-55",
+        component: PassaPorteCore,
+        layout: "/admin"
+    },
+    {
+        path: "/registrar-passaporte",
+        name: "Passa Porte",
+        icon: "tim-icons icon-bell-55",
+        component: PassaPorteCore,
         layout: "/admin"
     },
     {

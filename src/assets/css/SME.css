@@ -7,6 +7,10 @@
 * Refactor
 **/
 
-.ui.input {
+.ui input {
     width: 100% !important;
+}
+
+.df-pd-b {
+    padding-bottom: 15px !important;
 }

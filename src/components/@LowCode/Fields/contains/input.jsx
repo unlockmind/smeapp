@@ -3,7 +3,7 @@ import { Input } from "semantic-ui-react";
 
 import { useField } from "@unform/core";
 
-export default function InputSME({ name, ...rest }) {
+export default function InputSME({ name, label, ...rest }) {
   const inputRef = useRef(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
 
@@ -18,14 +18,8 @@ export default function InputSME({ name, ...rest }) {
   return (
     <div class="ui form">
       <div class="field">
-        <div class="ui pointing below label">Please enter a value</div>
-        <input
-          type="text"
-          placeholder="Search..."
-          defaultValue={defaultValue}
-          {...rest}
-          ref={inputRef}
-        />
+        <div class="ui pointing below label">{label}</div>
+        <input defaultValue={defaultValue} {...rest} ref={inputRef} />
       </div>
     </div>
   );
